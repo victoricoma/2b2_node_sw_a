@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-between align-items-center">
+    <h1>Departamentos</h1>
+    <a href="/departamentos/new" class="btn btn-success btn-sm">Novo</a>
+</div>
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each itens}}
+        <tr>
+            <td>{{cod_depto}}</td>
+            <td><a href="/departamentos/{{cod_depto}}">{{nome}}</a></td>
+            <td>
+                <a class="btn btn-warning btn-sm" href="/departamentos/{{cod_depto}}/edit">Editar</a>
+                <form method="POST" action="/departamentos/{{cod_depto}}?_method=DELETE" class="d-inline">
+                    <button class="btn btn-danger btn-sm">Excluir</button>
+                </form>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
